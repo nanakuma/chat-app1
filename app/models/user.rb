@@ -6,4 +6,6 @@ class User < ApplicationRecord
   validates :name, presence: true
   #validates 門番みたいなもの 無効なデータでないことを検証する
   #presence 空のデータを登録できないようにする
+  has_many :room_users
+  has_many :rooms, through: :room_users
 end
